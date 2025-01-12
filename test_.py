@@ -8,10 +8,19 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """2
-10
-15""",
-                "expected": "20"
+                "input": """11
+1 4
+3 5
+0 6
+5 7
+3 8
+5 9
+6 10
+8 11
+8 12
+2 13
+12 14""",
+                "expected": "4"
             },
         ]
 
@@ -23,7 +32,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('lope_bj_2217.py')
+            runpy.run_path('conference_room_bj_1931.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
