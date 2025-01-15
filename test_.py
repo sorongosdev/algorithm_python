@@ -8,23 +8,16 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """5
-1 1 1 6 0
-2 7 8 3 1""",
-                "expected": "18"
+                "input": """6 5
+1 1 0 1 1
+0 1 1 0 0
+0 0 0 0 0
+1 0 1 1 1
+0 0 1 1 1
+0 0 1 1 1""",
+                "expected": """4
+9"""
             },
-            {
-                "input": """3
-1 1 3
-10 30 20""",
-                "expected": "80"
-            },
-                        {
-                "input": """9
-5 15 100 31 39 0 0 3 26
-11 12 13 2 3 4 5 9 1""",
-                "expected": "528"
-            }
         ]
 
     def run_test_case(self, input_data, expected_output):
@@ -35,7 +28,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('treasure_bj_1026.py')
+            runpy.run_path('pic_bj_1926.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
