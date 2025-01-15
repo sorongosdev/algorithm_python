@@ -8,15 +8,37 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """6 5
-1 1 0 1 1
-0 1 1 0 0
-0 0 0 0 0
-1 0 1 1 1
-0 0 1 1 1
-0 0 1 1 1""",
-                "expected": """4
-9"""
+                "input": """4 6
+101111
+101010
+101011
+111011""",
+                "expected": """15"""
+            },
+            {
+                "input": """4 6
+110110
+110110
+111111
+111101""",
+                "expected": """9"""
+            },
+            {
+                "input": """2 25
+1011101110111011101110111
+1110111011101110111011101""",
+                "expected": """38"""
+            },
+            {
+                "input": """7 7
+1011111
+1110001
+1000001
+1000001
+1000001
+1000001
+1111111""",
+                "expected": """13"""
             },
         ]
 
@@ -28,7 +50,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('pic_bj_1926.py')
+            runpy.run_path('maze_bj_2178.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
