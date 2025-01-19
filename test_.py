@@ -8,9 +8,44 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """5 17""",
-                "expected": """4"""
+                "input": """6 4
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 1""",
+                "expected": """8"""
             },
+            {
+                "input": """6 4
+0 -1 0 0 0 0
+-1 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 1""",
+                "expected": """-1"""
+            },
+            {
+                "input": """6 4
+1 -1 0 0 0 0
+0 -1 0 0 0 0
+0 0 0 0 -1 0
+0 0 0 0 -1 1""",
+                "expected": """6"""
+            },
+            {
+                "input": """5 5
+-1 1 0 0 0
+0 -1 -1 -1 0
+0 -1 -1 -1 0
+0 -1 -1 -1 0
+0 0 0 0 0""",
+                "expected": """14"""
+            },        
+            {
+                "input": """2 2
+1 -1
+-1 1""",
+                "expected": """0"""
+            },  
         ]
 
     def run_test_case(self, input_data, expected_output):
@@ -21,7 +56,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('hideNseek_bj_1697.py')
+            runpy.run_path('tomato_bj_7576.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
