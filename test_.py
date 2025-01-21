@@ -8,12 +8,14 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """4 4
-####
-#JF#
-#..#
-#..#""",
-                "expected": """3"""
+                "input": """mirkovC4nizCC44
+C4""",
+                "expected": """mirkovniz"""
+            },
+            {
+                "input": """12ab112ab2ab
+12ab""",
+                "expected": """FRULA"""
             },
         ]
 
@@ -25,7 +27,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('fire_bj_4179.py')
+            runpy.run_path('string_explosion_bj_9935.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
