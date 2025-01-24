@@ -8,10 +8,14 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """100 2
-90 1
-70 2""",
-                "expected": """170"""
+                "input": """5 3
+10 50 20 70 100
+1 3
+3 4
+1 5""",
+                "expected": """26.67
+45.00
+50.00"""
             },
         ]
 
@@ -23,7 +27,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('safe_sft_lv2.py')
+            runpy.run_path('grade_avg_sft_lv3.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
