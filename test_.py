@@ -8,31 +8,16 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """4 5 1
+                "input": """7
+6
 1 2
-1 3
-1 4
-2 4
-3 4""",
-                "expected": """1 2 4 3
-1 2 3 4"""
-            },
-            {
-                "input": """5 5 3
-5 4
+2 3
+1 5
 5 2
-1 2
-3 4
-3 1""",
-                "expected": """3 1 2 5 4
-3 1 4 2 5"""
-            },
-            {
-                "input": """1000 1 1000
-999 1000""",
-                "expected": """1000 999
-1000 999"""
-            },
+5 6
+4 7""",
+                "expected": """4"""
+            }
         ]
 
     def run_test_case(self, input_data, expected_output):
@@ -43,7 +28,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('dfs_bfs_bj_1260.py')
+            runpy.run_path('virus_bj_2606.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
