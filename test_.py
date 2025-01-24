@@ -8,14 +8,10 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """mirkovC4nizCC44
-C4""",
-                "expected": """mirkovniz"""
-            },
-            {
-                "input": """12ab112ab2ab
-12ab""",
-                "expected": """FRULA"""
+                "input": """100 2
+90 1
+70 2""",
+                "expected": """170"""
             },
         ]
 
@@ -27,7 +23,7 @@ C4""",
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('string_explosion_bj_9935.py')
+            runpy.run_path('safe_sft_lv2.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
