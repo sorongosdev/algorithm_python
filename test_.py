@@ -8,38 +8,29 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """5 9
-1 2
-1 4
-2 1
-2 3
-3 4
-3 5
-4 1
-4 3
-5 1
-1 3""",
-                "expected": """1"""
+                "input": """4 5
+a..tt
+gc...
+a.g.t
+.c.ag""",
+                "expected": """2"""
             },
             {
-                "input": """8 14
-1 2
-1 5
-1 7
-2 3
-3 1
-4 1
-4 2
-5 4
-5 8
-6 2
-6 3
-7 1
-7 6
-8 7
-6 5""",
+                "input": """4 1
+a
+g
+c
+t""",
                 "expected": """4"""
-            }
+            },
+            {
+                "input": """4 4
+a...
+.c..
+..g.
+...t""",
+                "expected": """1"""
+            },
         ]
 
     def run_test_case(self, input_data, expected_output):
@@ -50,7 +41,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('commute_sft_lv3.py')
+            runpy.run_path('sequence_sft_lv3.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
