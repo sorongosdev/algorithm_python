@@ -31,9 +31,9 @@ def merge(dna1, dna2):
 def gen_super_dna(index):
    # 현재 비트마스크에서 가장 낮은 위치의 1비트 찾기
    # 여기서 - 연산자는 2의 보수 (not 연산 이후 1을 더한 것)
-   loc = index & -index
+   loc = index & -index # loc은 가장 오른쪽에 있는 1을 제외하고 0을 만드는 역할
    # 그 비트의 위치(0부터 시작)를 계산
-   pos = (loc).bit_length() - 1
+   pos = (loc).bit_length() - 1 # 2의 지수를 의미. 오른쪽에서 1이 나오는 위치
    # 현재 index의 superDNA를 계산해서 저장
    # dna[pos]: 현재 추가할 DNA
    # superDNA[index-loc]: 이전까지 병합된 결과
