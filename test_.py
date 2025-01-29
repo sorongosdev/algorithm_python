@@ -8,13 +8,14 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """2""",
-                "expected": """1"""
-            },
-            {
-                "input": """10""",
-                "expected": """3"""
-            },
+                "input": """3
+4
+7
+10""",
+                "expected": """7
+44
+274"""
+            }
         ]
 
     def run_test_case(self, input_data, expected_output):
@@ -25,7 +26,7 @@ class TestSolution(unittest.TestCase):
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('make_one_bj_1463.py')
+            runpy.run_path('one_two_three_bj_9095.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
