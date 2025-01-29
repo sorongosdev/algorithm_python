@@ -8,28 +8,12 @@ class TestSolution(unittest.TestCase):
         # 여러 테스트 케이스를 리스트로 정의
         self.test_cases = [
             {
-                "input": """4 5
-a..tt
-gc...
-a.g.t
-.c.ag""",
-                "expected": """2"""
-            },
-            {
-                "input": """4 1
-a
-g
-c
-t""",
-                "expected": """4"""
-            },
-            {
-                "input": """4 4
-a...
-.c..
-..g.
-...t""",
+                "input": """2""",
                 "expected": """1"""
+            },
+            {
+                "input": """10""",
+                "expected": """3"""
             },
         ]
 
@@ -41,7 +25,7 @@ a...
             sys.stdin = StringIO(input_data)
             sys.stdout = StringIO()
             
-            runpy.run_path('sequence_sft_lv3.py')
+            runpy.run_path('make_one_bj_1463.py')
             
             output = sys.stdout.getvalue().strip()
             self.assertEqual(output, expected_output)
